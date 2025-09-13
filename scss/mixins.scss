@@ -1,0 +1,252 @@
+// Custom Mixins for Bootstrap 5 Project
+
+// Responsive Typography
+@mixin responsive-font-size($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+  font-size: $min-size;
+  
+  @media (min-width: #{$min-vw}) {
+    font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+  }
+  
+  @media (min-width: #{$max-vw}) {
+    font-size: $max-size;
+  }
+}
+
+// Strip unit helper function
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Hover Lift Effect
+@mixin hover-lift($translate-y: -5px, $shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15)) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY($translate-y);
+    box-shadow: $shadow;
+  }
+}
+
+// Button Hover Effects
+@mixin button-hover-effect($bg-color, $border-color: null, $text-color: white) {
+  background-color: $bg-color;
+  border-color: if($border-color, $border-color, $bg-color);
+  color: $text-color;
+  transition: all 0.3s ease;
+  
+  &:hover,
+  &:focus {
+    background-color: darken($bg-color, 8%);
+    border-color: if($border-color, darken($border-color, 8%), darken($bg-color, 8%));
+    color: $text-color;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba($bg-color, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.25rem 0.5rem rgba($bg-color, 0.3);
+  }
+}
+
+// Outline Button Hover Effects
+@mixin outline-button-hover($bg-color, $border-color: null, $text-color: null) {
+  $border: if($border-color, $border-color, $bg-color);
+  $text: if($text-color, $text-color, $bg-color);
+  
+  background-color: transparent;
+  border-color: $border;
+  color: $text;
+  transition: all 0.3s ease;
+  
+  &:hover,
+  &:focus {
+    background-color: $bg-color;
+    border-color: $bg-color;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba($bg-color, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.25rem 0.5rem rgba($bg-color, 0.3);
+  }
+}
+
+// Gradient Background
+@mixin gradient-bg($start-color, $end-color, $direction: 45deg) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// Card Hover Effect
+@mixin card-hover($shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15)) {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow;
+  }
+}
+
+// Centered Flexbox
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Aspect Ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: percentage($height / $width);
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Smooth Scrolling
+@mixin smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+// Text Truncate
+@mixin text-truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Custom Scrollbar
+@mixin custom-scrollbar($width: 8px, $track-color: #f1f1f1, $thumb-color: #888) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: $width / 2;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: $width / 2;
+    
+    &:hover {
+      background: darken($thumb-color, 20%);
+    }
+  }
+}
+
+// Focus Ring
+@mixin focus-ring($color: var(--bs-primary), $width: 0.25rem, $opacity: 0.25) {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 $width rgba($color, $opacity);
+  }
+}
+
+// Media Query Mixins
+@mixin media-up($breakpoint) {
+  @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint) {
+  $max-width: map-get($grid-breakpoints, $breakpoint) - 0.02;
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin media-between($lower, $upper) {
+  $min: map-get($grid-breakpoints, $lower);
+  $max: map-get($grid-breakpoints, $upper) - 0.02;
+  
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// Animation Mixins
+@mixin fade-in($duration: 0.3s, $delay: 0s) {
+  animation: fadeIn $duration ease-in-out $delay both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-up($duration: 0.5s, $delay: 0s) {
+  animation: slideUp $duration ease-out $delay both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Utility Mixins
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Selection styling
+@mixin selection($bg-color, $text-color: white) {
+  ::selection {
+    background: $bg-color;
+    color: $text-color;
+  }
+  
+  ::-moz-selection {
+    background: $bg-color;
+    color: $text-color;
+  }
+}

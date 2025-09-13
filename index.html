@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional web solutions with modern design and cutting-edge technology">
+    <title>ModernTech - Professional Web Solutions</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom SCSS compiled to CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="index.html">
+                <i class="bi bi-hexagon-fill text-primary me-2"></i>ModernTech
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-medium" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item" href="services.html">Web Development</a></li>
+                            <li><a class="dropdown-item" href="services.html">UI/UX Design</a></li>
+                            <li><a class="dropdown-item" href="services.html">Digital Strategy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <div class="hero-content pe-lg-4">
+                        <h1 class="display-4 fw-bold mb-4 text-dark">
+                            Beautiful Digital Experiences
+                        </h1>
+                        <p class="lead mb-4 text-muted">
+                            We create modern, responsive websites that combine stunning design with powerful functionality. Transform your digital presence with our expert team.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="portfolio.html" class="btn btn-primary btn-lg px-4 py-3">
+                                View Our Work
+                            </a>
+                            <a href="contact.html" class="btn btn-outline-dark btn-lg px-4 py-3">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="hero-image">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                             alt="Modern workspace with laptop and design tools" 
+                             class="img-fluid rounded-3 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-3">Why Choose ModernTech</h2>
+                    <p class="lead text-muted">We deliver exceptional results through innovative design and cutting-edge technology</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-palette text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Creative Design</h4>
+                        <p class="text-muted">Beautiful, user-centered designs that reflect your brand identity and engage your audience.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-code-slash text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Clean Code</h4>
+                        <p class="text-muted">Well-structured, maintainable code that follows industry best practices and standards.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-phone text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Mobile First</h4>
+                        <p class="text-muted">Responsive designs that look perfect on every device, from mobile phones to desktop computers.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-lightning-charge text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Fast Performance</h4>
+                        <p class="text-muted">Optimized for speed and performance, ensuring quick load times and smooth user experience.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-shield-check text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Secure & Reliable</h4>
+                        <p class="text-muted">Built with security best practices and reliable hosting solutions for peace of mind.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 text-center bg-white rounded-3 shadow-sm hover-lift">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-headset text-primary display-4"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">24/7 Support</h4>
+                        <p class="text-muted">Comprehensive support and maintenance to keep your website running smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary py-5 text-white">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold mb-2">150+</h3>
+                        <p class="mb-0">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold mb-2">5</h3>
+                        <p class="mb-0">Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold mb-2">98%</h3>
+                        <p class="mb-0">Client Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold mb-2">24/7</h3>
+                        <p class="mb-0">Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Start Your Project?</h2>
+                    <p class="lead mb-4 text-muted">Let's discuss how we can help transform your digital presence and achieve your business goals.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg px-4 py-3">Get Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-hexagon-fill text-primary me-2"></i>ModernTech
+                    </h5>
+                    <p class="text-light">Creating beautiful digital experiences that drive results and engage audiences.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3 fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="services.html" class="text-light text-decoration-none">Services</a></li>
+                        <li><a href="portfolio.html" class="text-light text-decoration-none">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-light text-decoration-none">Web Development</a></li>
+                        <li><a href="services.html" class="text-light text-decoration-none">UI/UX Design</a></li>
+                        <li><a href="services.html" class="text-light text-decoration-none">Digital Strategy</a></li>
+                        <li><a href="services.html" class="text-light text-decoration-none">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <div class="contact-info">
+                        <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>123 Design Street, Tech City, TC 12345</p>
+                        <p class="mb-2"><i class="bi bi-telephone me-2"></i>(555) 123-4567</p>
+                        <p class="mb-0"><i class="bi bi-envelope me-2"></i>hello@moderntech.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 text-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-light">&copy; 2024 ModernTech. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
